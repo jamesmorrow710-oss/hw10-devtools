@@ -103,6 +103,10 @@
     margin-top: 12px;
   }
 
+  .devtools-demo {
+    margin-top: 24px;
+  }
+
   .new-pet-dialog {
     width: min(420px, calc(100% - 32px));
     padding: 24px;

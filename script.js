@@ -70,9 +70,13 @@ function handlePetAction() {
     pet.weight -= 1;
     $('.message').text('You played with ' + pet.name + '! Happiness increased and weight decreased by 1.');
   } else if (action === 'exercise') {
-    pet.happiness -= 1;
-    pet.weight -= 1;
-    $('.message').text('You exercised with ' + pet.name + '! Happiness and weight decreased by 1.');
+    var happinessChanged = pet.happiness > 0;
+    var weightChanged = pet.weight > 0;
+    pet.happiness = Math.max(0, pet.happiness - 1);
+    pet.weight = Math.max(0, pet.weight - 1);
+    var happinessMessage = happinessChanged ? 'Happiness decreased by 1.' : 'Happiness stayed at 0.';
+    var weightMessage = weightChanged ? 'Weight decreased by 1.' : 'Weight stayed at 0.';
+    $('.message').text('You exercised with ' + pet.name + '! ' + happinessMessage + ' ' + weightMessage);
   }
 
   checkPetValues(pet);
