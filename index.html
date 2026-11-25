@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Your Giga Pet</title>
+    <meta name="description" content="A cool thing made with Glitch">
+    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+      <h1>
+        This is your Giga Pet
+      </h1>
+    </header>
+
+    <main>
+      <section class="pets-container" aria-label="Your pets"></section>
+      <section class="message-container" aria-live="polite">
+        <div class="message"></div>
+      </section>
+      <section class="new-pet-container">
+        <button class="new-pet-button">
+          New Pet
+        </button>
+      </section>
+    </main>
+
+    <dialog class="new-pet-dialog" aria-labelledby="new-pet-title">
+      <form class="new-pet-form">
+        <h2 id="new-pet-title">Create a new pet</h2>
+        <p>Your new pet will start with default stats. Existing pets will keep theirs.</p>
+        <label for="new-pet-name">Pet name</label>
+        <input class="new-pet-name" id="new-pet-name" name="petName" type="text" required>
+        <label for="new-pet-image">Pet image</label>
+        <select class="new-pet-image" id="new-pet-image" name="petImage"></select>
+        <div class="new-pet-dialog-actions">
+          <button class="cancel-new-pet" type="button">Cancel</button>
+          <button type="submit">Create pet</button>
+        </div>
+      </form>
+    </dialog>
+
+    <!-- Your web-app is https, so your scripts need to be too -->
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"
+            integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
+            crossorigin="anonymous"></script>
+  </body>
+</html>
